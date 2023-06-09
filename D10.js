@@ -573,7 +573,7 @@ const movies = [
 ]
 
 newestMovie()
-console.log("Number of movies are",countMovies())
+console.log("Number of movies is",countMovies())
 console.log("Years of publish are", onlyTheYears())
 console.log("Movies published in the last millennium are",onlyInLastMillennium())
 console.log("Sum of all publihed years are", sumAllTheYears())
