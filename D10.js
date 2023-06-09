@@ -126,9 +126,9 @@ const onlyLetters = (string) => {
 /* ESERCIZIO 6
   Crea una funzione chiamata "isThisAnEmail" che riceve una stringa come parametro e ritorna true se la stringa è un valido indirizzo email.
 */
-const isThisAnEmail = (string) => {
-  console.log(string)
-  let email = string.split ('')      
+const isThisAnEmail = (string) => {    // I don't know how to verify efficiently if an email is valid or not
+  console.log(string)                  // I can do it with innerHTML, create an input type email field
+  let email = string.split ('')        // and checking the validity of that field 
   const validator = (element) => element === '@'     
   let validation = email.some (validator)    
   return validation 
