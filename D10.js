@@ -133,7 +133,7 @@ const isThisAnEmail = (string) => {
   let validation = email.some (validator)    
   return validation 
 }         
-console.log ("This is a valid email?", isThisAnEmail ('Hello@epicode'))
+// console.log ("This is a valid email?", isThisAnEmail ('Hello@epicode'))
 
 /* ESERCIZIO 7
   Scrivi una funzione chiamata "whatDayIsIt" che ritorna il giorno della settimana corrente.
@@ -364,8 +364,11 @@ const addLi = () => {
 */
 
 const deleteLis = () => {
-  const allLis = document.querySelectorAll("#myList")
-  allLis.forEach(element => element.style.display = "none") // Add style inline isn't good. It's better to add a new class to all elements and apply display: none on that class
+  const myList = document.querySelector("#myList")
+  const allLis = document.querySelectorAll("li")
+  for ( let i = 0; i < allLis.length; i++) {
+    myList.removeChild(allLis[i])
+  }
 }
 // deleteLis()
 
@@ -393,6 +396,14 @@ const addNewClass = () => {
 
 */
 
+const halfTree = (n) => {
+  let a = "*"
+  for (let i = 0; i < n; i++) {
+    console.log(a)
+    a = a + "*"
+  }
+}
+// halfTree(5)
 
 /* ESERCIZIO 28
   Crea una funzione chiamata "tree" che riceve un numero come parametro e costruisce un albero di "*" (asterischi) dell'altezza fornita.
@@ -400,16 +411,45 @@ const addNewClass = () => {
   Esempio:
   tree(3)
 
-    *
+    *  
    ***
   *****
 
 */
 
+const tree = (n) => {
+  let a = "*"
+  let b = " "
+  let numberOfSpace = n
+  for ( let i = 0; i < n; i++) {
+    console.log(b.repeat(numberOfSpace - 1) + a + b.repeat(numberOfSpace - 1))
+    numberOfSpace -= 1
+    a = a + "**"
+  }
+}
+// tree(5)
+
 /* ESERCIZIO 29
   Crea una funzione chiamata "isItPrime" che riceve un numero come parametro e ritorna true se il numero fornito è un numero primo.
 */
 
+const isItPrime = (n) => {
+  let isPrime = true
+  n = Math.floor(n)
+  if( n === 1) {
+    console.log("1 is not a Prime Number")
+  } else if( n > 1) {
+    for( let i = 2; i < n; i++) {
+      if( n % i === 0) {
+        isPrime = false
+      }
+    }
+    console.log("Is insert number Prime?", isPrime)
+  }
+  else console.log("Insert number isn't positive")
+  return(isPrime)
+}
+// isItPrime(101)
 
 /* Questo array viene usato per gli esercizi. Non modificarlo. */
 
