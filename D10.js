@@ -290,9 +290,12 @@ const searchByTitle = (string, array = movies) => {
 */
 
 const searchAndDivide = (string, array = movies) => {
-  const moviesDivided = []
-  moviesDivided.push(array.filter(movie => movie.Title.includes(string)))
-  moviesDivided.push(array.filter(movie => !movie.Title.includes(string)))
+  const moviesDivided = {
+    match : [],
+    unmatch: [],
+  }
+  moviesDivided.match.push(array.filter(movie => movie.Title.includes(string)))
+  moviesDivided.unmatch.push(array.filter(movie => !movie.Title.includes(string)))
   return moviesDivided
 }
 
